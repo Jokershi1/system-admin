@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ailc.system.mapper.SysDeptMapper">
+    <sql id="Base_Column_List">
+        dept_id, dept_name, status, create_id,create_time,update_time
+    </sql>
+
+    <!-- 新增 -->
+    <insert id="add" useGeneratedKeys="true" keyProperty="deptId">
+        insert into t_sys_dept(dept_name, create_id) values(#{sysDept.deptName}, #{sysDept.createId})
+    </insert>
+
+    <!-- 删除 -->
+    <delete id="del">
+        delete from t_sys_dept where dept_id = #{deptId}
+    </delete>
+
+    <!-- 修改 -->
+    <update id="update">
+        update t_sys_dept
+        <set>
+            <if test="sysDept.deptName != null and sysDept.deptName != ''">dept_name = #{sysDept.deptName}</if>
+        </set>
+        where dept_id = #{sysDept.deptId}
+    </update>
+
+    <!-- 根据主键获取部门信息 -->
+    <select id="findOne" resultType="com.ailc.system.domain.SysDept">
+        select
+        <include refid="Base_Column_List"/>
+        from t_sys_dept where dept_id = #{deptId}
+    </select>
+</mapper>

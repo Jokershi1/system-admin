@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: system-admin
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.12.29.16:3306/dev_account?useSSL=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: xiaolu_dev
+    password: 1sJi9we1J5mA9G1h
+    hikari:
+      maximum-pool-size: 60
+      minimum-idle: 6
+
+mybatis:
+  type-aliases-package: com.ailc.system.domain
+  mapper-locations: classpath*:mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30
+    use-generated-keys: true
+
+#logging
+logging:
+  file:
+    path: logs
+    name: system-admin
+  level:
+    com.ailc.system: debug
+    com.zaxxer: info
+    org.apache.zookeeper: info
+    org.springframework: info

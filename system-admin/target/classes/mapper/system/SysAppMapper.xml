@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ailc.system.mapper.SysAppMapper">
+    <sql id="Base_Column_List">
+        autoId, app_code, app_name, status,create_id,create_time, update_time
+    </sql>
+
+    <!-- 新增 -->
+    <insert id="add" useGeneratedKeys="true" keyProperty="autoId">
+        insert  into t_sys_app(app_code, app_name, create_id)
+        values(#{sysApp.appCode}, #{sysApp.appName}, #{sysApp.createId})
+    </insert>
+
+    <!-- 删除 -->
+    <delete id="del">
+        delete from t_sys_app where autoId=#{autoId}
+    </delete>
+
+    <!-- 修改 -->
+    <update id="update">
+        update t_sys_app
+        <set>
+            <if test="sysApp.appCode != null and sysApp.appCode != ''">app_code=#{sysApp.appCode},</if>
+            <if test="sysApp.appName != null and sysApp.appName != ''">app_name=#{sysApp.appName},</if>
+        </set>
+        where auto_id = #{sysApp.autoId}
+    </update>
+
+    <!-- 根据平台编码获取平台信息 -->
+    <select id="findByAppCode" resultType="com.ailc.system.domain.SysApp">
+        select
+        <include refid="Base_Column_List"/>
+        from t_sys_app where app_code=#{appCode}
+    </select>
+</mapper>

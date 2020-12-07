@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ailc.system.mapper.SysMenuMapper">
+    <sql id="Base_Column_List">
+        menu_id, parent_id, menu_code, menu_name,url,module_code, menu_type,
+        icon,menu_sort,remark,status,create_id,create_time,update_time
+    </sql>
+
+    <!-- 新增 -->
+    <insert id="add" useGeneratedKeys="true" keyProperty="menuId">
+        insert into t_sys_menu
+        (
+          parent_id, menu_code, menu_name, url, module_code, menu_type, icon, menu_sort, remark,create_id
+        ) values(
+          #{sysMenu.parentId},#{sysMenu.menuCode},#{sysMenu.menuName},#{sysMenu.url},#{sysMenu.moduleCode},
+          #{sysMenu.menuType},#{sysMenu.icon},#{sysMenu.menuSort},#{sysMenu.remark},#{sysMenu.createId}
+        )
+    </insert>
+
+    <!-- 删除 -->
+    <delete id="del">
+        delete from t_sys_menu where menu_id=#{menuId}
+    </delete>
+
+    <!-- 修改 -->
+    <update id="update">
+        update t_sys_menu
+        <set>
+            <if test="sysMenu.menuCode != null and sysMenu.menuCode != ''">menu_code=#{sysMenu.menuCode},</if>
+            <if test="sysMenu.menuName != null and sysMenu.menuName != ''">menu_name=#{sysMenu.menuName},</if>
+            <if test="sysMenu.url != null and sysMenu.url != ''">url=#{sysMenu.url},</if>
+            <if test="sysMenu.moduleCode != 0">module_code=#{sysMenu.moduleCode},</if>
+            <if test="sysMenu.menuType != 0">menu_type=#{sysMenu.menuType},</if>
+            <if test="sysMenu.icon != null and sysMenu.icon != ''">icon=#{sysMenu.icon},</if>
+            <if test="sysMenu.menuSort != null">menu_sort=#{sysMenu.menuSort},</if>
+            <if test="sysMenu.remark != null and sysMenu.remark != ''">remark=#{sysMenu.remark},</if>
+        </set>
+        where menu_id=#{sysMenu.menuId}
+    </update>
+
+    <!-- 根据主键id集合获取菜单信息 -->
+    <select id="findByMenuIds" resultType="com.ailc.system.domain.SysMenu">
+        select
+        <include refid="Base_Column_List"/>
+        from t_sys_menu where menu_id in
+        <foreach collection="menuIds" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </select>
+</mapper>

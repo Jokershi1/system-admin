@@ -1,0 +1,69 @@
+2020-12-07 16:06:16.297  INFO 424 --- [main] com.ailc.system.AdminApplication         : Starting AdminApplication using Java 1.8.0_201 on DESKTOP-GQNA2HR with PID 424 (C:\Users\joker\Desktop\system-admin\target\classes started by joker in C:\Users\joker\Desktop\system-admin)
+2020-12-07 16:06:16.302 DEBUG 424 --- [main] com.ailc.system.AdminApplication         : Running with Spring Boot v2.4.0, Spring v5.3.1
+2020-12-07 16:06:16.302  INFO 424 --- [main] com.ailc.system.AdminApplication         : No active profile set, falling back to default profiles: default
+2020-12-07 16:06:16.857  WARN 424 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.ailc.system]' package. Please check your configuration.
+2020-12-07 16:06:17.162  INFO 424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-07 16:06:17.168  INFO 424 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-07 16:06:17.169  INFO 424 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-07 16:06:17.225  INFO 424 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-07 16:06:17.225  INFO 424 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 891 ms
+2020-12-07 16:06:17.282  WARN 424 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sysAppServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.ailc.system.mapper.SysAppMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+2020-12-07 16:06:17.285  INFO 424 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-12-07 16:06:17.305  INFO 424 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-07 16:06:17.321 ERROR 424 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.ailc.system.mapper.SysAppMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.ailc.system.mapper.SysAppMapper' in your configuration.
+
+2020-12-07 16:08:41.131  INFO 17828 --- [main] com.ailc.system.AdminApplication         : Starting AdminApplication using Java 1.8.0_201 on DESKTOP-GQNA2HR with PID 17828 (C:\Users\joker\Desktop\system-admin\target\classes started by joker in C:\Users\joker\Desktop\system-admin)
+2020-12-07 16:08:41.133 DEBUG 17828 --- [main] com.ailc.system.AdminApplication         : Running with Spring Boot v2.4.0, Spring v5.3.1
+2020-12-07 16:08:41.133  INFO 17828 --- [main] com.ailc.system.AdminApplication         : No active profile set, falling back to default profiles: default
+2020-12-07 16:08:41.563  WARN 17828 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.ailc.system]' package. Please check your configuration.
+2020-12-07 16:08:41.793  INFO 17828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-07 16:08:41.800  INFO 17828 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-07 16:08:41.800  INFO 17828 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-07 16:08:41.851  INFO 17828 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-07 16:08:41.851  INFO 17828 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 684 ms
+2020-12-07 16:08:41.887  WARN 17828 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sysAppServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.ailc.system.mapper.SysAppMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+2020-12-07 16:08:41.889  INFO 17828 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-12-07 16:08:41.898  INFO 17828 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-07 16:08:41.913 ERROR 17828 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.ailc.system.mapper.SysAppMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.ailc.system.mapper.SysAppMapper' in your configuration.
+
+2020-12-07 16:10:10.589  INFO 6168 --- [main] com.ailc.system.AdminApplication         : Starting AdminApplication using Java 1.8.0_201 on DESKTOP-GQNA2HR with PID 6168 (C:\Users\joker\Desktop\system-admin\target\classes started by joker in C:\Users\joker\Desktop\system-admin)
+2020-12-07 16:10:10.591 DEBUG 6168 --- [main] com.ailc.system.AdminApplication         : Running with Spring Boot v2.4.0, Spring v5.3.1
+2020-12-07 16:10:10.592  INFO 6168 --- [main] com.ailc.system.AdminApplication         : No active profile set, falling back to default profiles: default
+2020-12-07 16:10:11.251  INFO 6168 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-07 16:10:11.257  INFO 6168 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-07 16:10:11.257  INFO 6168 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-07 16:10:11.306  INFO 6168 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-07 16:10:11.307  INFO 6168 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 682 ms
+2020-12-07 16:10:11.693  INFO 6168 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-07 16:10:11.822  INFO 6168 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-07 16:10:11.829  INFO 6168 --- [main] com.ailc.system.AdminApplication         : Started AdminApplication in 1.62 seconds (JVM running for 2.602)

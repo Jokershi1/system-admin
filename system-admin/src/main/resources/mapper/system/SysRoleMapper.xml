@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ailc.system.mapper.SysRoleMapper">
+    <sql id="Base_Column_List">
+        role_id,role_name,status,create_id,create_time,update_time
+    </sql>
+
+    <!-- 新增 -->
+    <insert id="add" useGeneratedKeys="true" keyProperty="roleId">
+        insert into t_sys_role(role_name, create_id) values(#{sysRole.roleName}, #{sysRole.createId})
+    </insert>
+
+    <!-- 删除 -->
+    <delete id="del">
+        delete from t_sys_role where role_id=#{roleId}
+    </delete>
+
+    <!-- 修改 -->
+    <update id="update">
+        update t_sys_role
+        <set>
+            <if test="sysRole.roleName != null and sysRole.roleName != ''">role_name=#{sysRole.roleName}</if>
+        </set>
+        where role_id=#{sysRole.roleId}
+    </update>
+
+    <!-- 根据主键获取系统角色 -->
+    <select id="findOne" resultType="com.ailc.system.domain.SysRole">
+        select
+        <include refid="Base_Column_List"/>
+        from t_sys_role where role_id=#{roleId}
+    </select>
+</mapper>
